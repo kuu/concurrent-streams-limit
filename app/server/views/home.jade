@@ -1,0 +1,46 @@
+
+extends layout
+
+block content
+	div.navbar.navbar-fixed-top
+		div.navbar-inner
+			div.container-fluid
+				ul#global-nav.nav.pull-left
+					a(href='#').brand Control Panel
+				button#btn-logout.btn.btn-primary
+					i.icon-lock.icon-white
+					| Sign Out
+
+	.github-fork-ribbon-wrapper.right(style='top:40px;')
+		.github-fork-ribbon(style='background-color: #333;')
+			a(href="https://github.com/kuu/ConcurrentStreamLimits") View On Github
+
+
+	include player
+
+block scripts
+	script(src='//player.ooyala.com/static/v4/production/latest/core.min.js')
+	script(src='//player.ooyala.com/static/v4/production/latest/video-plugin/bit_wrapper.min.js')
+	script(src='//player.ooyala.com/static/v4/production/latest/video-plugin/main_html5.min.js')
+	script(src='//player.ooyala.com/static/v4/production/latest/video-plugin/osmf_flash.min.js')
+	script(src='//player.ooyala.com/static/v4/production/latest/skin-plugin/html5-skin.min.js')
+	script(src='/vendor/jquery.min.js')
+	script(src='/vendor/jquery.form.js')
+	script(src='/vendor/bootstrap-modal.js')
+	script(src='/vendor/bootstrap-transition.js')
+	script(type='text/javascript').
+		var embedCode = '!{embedCode}';
+		var playerParam = {
+			pcode: '!{pcode}',
+			playerBrandingId: '!{playerId}',
+			embedToken: '!{token}',
+			debug: true,
+			skin: {
+				inline: {
+					localization: {defaultLanguage: 'ja'}
+				}
+			}
+		};
+	script(src='/js/views/home.js')
+	script(src='/js/controllers/homeController.js')
+	script(src='/js/form-validators/accountValidator.js')

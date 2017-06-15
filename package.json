@@ -1,0 +1,35 @@
+{
+  "name": "concurrent-streams-limit",
+  "version": "0.0.1",
+  "description": "Concurrent stream limites test app based on the node-login template by Stephen Braitsch <stephen@braitsch.io>",
+  "author": "Kuu Miyazaki",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kuu/concurrent-streams-limit.git"
+  },
+  "scripts": {
+    "db": "mongod --dbpath ./data/",
+    "start": "forever start -o server.log -e error.log app.js",
+    "stop": "forever stop app.js"
+  },
+  "dependencies": {
+    "body-parser": "1.14.1",
+    "config": "^1.26.1",
+    "connect-mongo": "0.8.2",
+    "cookie-parser": "1.4.0",
+    "emailjs": "1.0.0",
+    "errorhandler": "1.4.2",
+    "express": "4.13.3",
+    "express-session": "1.11.3",
+    "forever": "^0.15.1",
+    "jade": "1.11.0",
+    "moment": "2.10.3",
+    "mongodb": "2.0.45",
+    "ooyala-api": "^0.10.0",
+    "sha256": "^0.2.0",
+    "stylus": "0.52.4"
+  },
+  "engines": {
+    "node": "4.2.1"
+  }
+}
